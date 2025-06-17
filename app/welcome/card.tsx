@@ -35,9 +35,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (!document.hidden) {
-        // Briefly reset and reapply pin position to force transform refresh
-        setPinInPosition(false);
-        setTimeout(() => setPinInPosition(true), 10);
+        const pin = document.querySelector(".pin-wrapper");
+        if (pin) {
+          // Force layout refresh by toggling display
+          (pin as HTMLElement).style.display = "none";
+          void (pin as HTMLElement).offsetHeight; // trigger reflow
+          (pin as HTMLElement).style.display = "";
+        }
       }
     };
 
@@ -97,7 +101,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         {/* Pin */}
         <div
-          className="absolute top-2 left-1/2 z-20 pointer-events-none"
+          className="pin-wrapper absolute top-2 left-1/2 z-20 pointer-events-none"
           style={{
             transform: `translateX(${pinOffset.x}px) translateX(-50%)`,
             willChange: "transform",
