@@ -5,7 +5,7 @@ import Newport65 from "../img/newport-65.webp";
 
 export function Welcome() {
   return (
-<main className="flex-1 flex flex-col flex items-center justify-center pt-16 pb-4">
+<main className="flex-1 flex flex-col flex items-center justify-center pt-8 md:pt-16 md:pb-4">
       <div className="flex-1 flex flex-col items-center gap-12 min-h-0">
         <header className="flex flex-col items-center gap-4">
           <div className="relative w-full max-w-[500px] mx-auto">
@@ -15,7 +15,7 @@ export function Welcome() {
               className="block w-full"
             />
             {/* Enhanced handwritten “1965 Version” */}
-            <div className="absolute bottom-[-5%] right-[1%] pointer-events-none rotate-[-3deg] leading-[0.85] text-left">
+            <div className="absolute bottom-[-5%] right-[4%] pointer-events-none rotate-[-3deg] leading-[0.85] text-left">
               <span className='block text-[16px] font-["Special_Elite",monospace]'>
                 (1965 Edition)
               </span>

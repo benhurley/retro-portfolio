@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 interface ProjectCardProps {
   title: string;
@@ -26,6 +26,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const [pinInPosition, setPinInPosition] = useState(false);
   const [showPinHole, setShowPinHole] = useState(false);
   const [pinHovered, setPinHovered] = useState(false);
+
+  const labelRotation = useMemo(
+    () => `${(Math.random() * 6 - 3).toFixed(2)}deg`, // -3° to +3° tilt
+    []
+  );
 
   useEffect(() => {
     const rotate = (Math.random() * 5 - 2.5).toFixed(2);
@@ -115,7 +120,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         >
           <div className="flex justify-between items-center text-[11px] font-mono uppercase tracking-widest opacity-80">
             <span>{role}</span>
-            <div className="text-black text-[10px] font-bold uppercase px-2 py-1 rotate-[-2deg] border border-black shadow -mt-1 mr-0">
+            <div
+              className="text-black text-[10px] font-bold uppercase px-2 py-1 border border-black shadow -mt-1 mr-0 bg-white"
+              style={{
+                rotate: labelRotation,
+              }}
+            >
               {framework}
             </div>
           </div>
