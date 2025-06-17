@@ -162,7 +162,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               src={thumbnail}
               alt={thumbnailAlt}
               className="w-full h-full object-cover object-center bg-white
-             grayscale contrast-120
+             grayscale-70 contrast-110
              group-hover:grayscale-0 group-hover:contrast-100"
             />
           </div>
