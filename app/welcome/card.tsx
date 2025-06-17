@@ -103,7 +103,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <div className="w-3 h-3 bg-black rounded-full shadow-md border border-black mx-auto" />
 
             {/* Stem that grows on hover */}
-            <div className="w-[2px] h-[5px] group-hover:h-[16px] transition-all duration-300 ease-in-out bg-gray-700 mx-auto -mt-[1px]" />
+            <div className="w-[2px] h-[5px] group-hover:h-[16px] transition-all duration-300 ease-in-out bg-gray-700 mx-auto -mt-[1px] z-20" />
           </div>
 
           {/* Dot where the pin was */}
