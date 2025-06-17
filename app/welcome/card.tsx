@@ -74,7 +74,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       {/* Inner card gets final offset */}
       <div
-        className="transition-transform duration-300 ease-out hover:translate-y-[-4px] hover:scale-[1.07] hover:z-10 hover:shadow-[6px_8px_0_rgba(0,0,0,0.35)]"
+        className="transition-transform duration-300 ease-out hover:translate-y-[-4px] hover:scale-[1.03] hover:z-10 hover:shadow-[6px_8px_0_rgba(0,0,0,0.35)]"
         style={{
           transform: finalTransform ?? undefined,
           ...style,
