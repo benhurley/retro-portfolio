@@ -33,6 +33,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   );
 
   useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        // Briefly reset and reapply pin position to force transform refresh
+        setPinInPosition(false);
+        setTimeout(() => setPinInPosition(true), 10);
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+
+  useEffect(() => {
     const rotate = (Math.random() * 5 - 2.5).toFixed(2);
     const tx = (Math.random() * 4 - 2).toFixed(1);
     const ty = (Math.random() * 4 - 2).toFixed(1);
@@ -85,6 +100,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="absolute top-2 left-1/2 z-20 pointer-events-none"
           style={{
             transform: `translateX(${pinOffset.x}px) translateX(-50%)`,
+            willChange: "transform",
           }}
         >
           <div
