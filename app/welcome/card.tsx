@@ -120,7 +120,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
           </div>
 
-          <h3 className="text-xl font-bold tracking-wide uppercase mb-1 mt-2">
+          <h3 className="text-xl font-bold uppercase font-['Ledger',serif]">
             {title}
           </h3>
 

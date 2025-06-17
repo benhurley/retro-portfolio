@@ -18,9 +18,27 @@ export const websites = [
         imgAlt: "TTM Homepage",
         title: "To The Moon",
         description: "A New York street brand established by artist Gazoo.",
-        url: "https://shop.uptothemoon.com",
+        url: "https://uptothemoon.com",
         framework: "Shopify",
         role: 'Creator',
+    },
+            {
+        imgUrl: NippiesScreenshot,
+        imgAlt: "Nippies by @ScubaSteveArt",
+        title: "The Nippies",
+        description: "A collection of 100 misfit yetis on Solana and Bitcoin.",
+        url: "https://nippies.netlify.app",
+        framework: "React",
+        role: 'Creator',
+    },
+                {
+        imgUrl: PTScreenshot,
+        imgAlt: "Pretty Tickets Homepage",
+        title: "Pretty Tickets",
+        description: "Use AI to transform purchases into commemorative tickets.",
+        url: "https://prettytickets.justben.fyi",
+        framework: "React",
+        role: "Creator"
     },
     {
         imgUrl: BonobosHero,
@@ -30,15 +48,6 @@ export const websites = [
         url: "https://bonobos.com",
         framework: "NextJS",
         role: "Contributor"
-    },
-    {
-        imgUrl: NippiesScreenshot,
-        imgAlt: "Nippies by @ScubaSteveArt",
-        title: "The Nippies",
-        description: "A collection of 100 misfit yetis on Solana and Bitcoin.",
-        url: "https://nippies.netlify.app",
-        framework: "React",
-        role: 'Creator',
     },
     {
         imgUrl: DHHero,
@@ -58,22 +67,13 @@ export const websites = [
         framework: "T3 Stack",
         role: 'Contributor',
     },
-    {
-        imgUrl: SmokeBroScreenshot,
-        imgAlt: "Smoke Bro Homepage",
-        title: "SmokeBro",
-        description: "The Ultimate 4-in-1 Cigar Holder, made for golfers.",
-        url: "https://mysmokebro.com",
-        framework: "GoDaddy",
-        role: "Creator"
-    },
-    {
-        imgUrl: BetaEtaScreenshot,
-        imgAlt: "Westcott Fountain at Florida State University",
-        title: "FSU Alumni Webiste",
-        description: "Alumni Chapter of Pi Kappa Phi at Florida State University.",
-        url: "https://betaeta.com",
-        framework: "Wordpress",
+            {
+        imgUrl: BidZippy,
+        imgAlt: "BidZippy Homepage",
+        title: "Bid Zippy",
+        description: "Quick Filters to find the Best Auctions on eBay.",
+        url: "https://bidzippy.com",
+        framework: "NextJS",
         role: "Creator"
     },
     {
@@ -85,31 +85,22 @@ export const websites = [
         framework: "React",
         role: "Creator"
     },
-    {
-        imgUrl: PTScreenshot,
-        imgAlt: "Pretty Tickets Homepage",
-        title: "Pretty Tickets",
-        description: "Use AI to transform purchases into commemorative tickets.",
-        url: "https://prettytickets.justben.fyi",
-        framework: "React",
+            {
+        imgUrl: SmokeBroScreenshot,
+        imgAlt: "Smoke Bro Homepage",
+        title: "SmokeBro",
+        description: "The Ultimate 4-in-1 Cigar Holder, made for golfers.",
+        url: "https://mysmokebro.com",
+        framework: "GoDaddy",
         role: "Creator"
     },
-    {
-        imgUrl: CryptoCostScreenshot,
-        imgAlt: "Cryptocost homepage",
-        title: "Crypto Cost",
-        description: "Provides a USD estimate for an amount of cryptocurrency.",
-        url: "https://cryptocost.justben.fyi",
-        framework: "React",
-        role: "Creator"
-    },
-    {
-        imgUrl: BidZippy,
-        imgAlt: "BidZippy Homepage",
-        title: "BidZippy",
-        description: "Quick Filters to find the Best Auctions on eBay.",
-        url: "https://bidzippy.com",
-        framework: "NextJS",
+        {
+        imgUrl: BetaEtaScreenshot,
+        imgAlt: "Westcott Fountain at Florida State University",
+        title: "Beta Eta Alumni",
+        description: "Alumni Chapter of Pi Kappa Phi at Florida State University.",
+        url: "https://betaeta.com",
+        framework: "Wordpress",
         role: "Creator"
     },
     {
@@ -119,6 +110,15 @@ export const websites = [
         description: "A lifestyle brand for the modern-day cigar enthusiast.",
         url: "https://bigcigarguy.com",
         framework: "Netlify",
+        role: "Creator"
+    },
+    {
+        imgUrl: CryptoCostScreenshot,
+        imgAlt: "Cryptocost homepage",
+        title: "Crypto Cost",
+        description: "Provides a USD estimate for an amount of cryptocurrency.",
+        url: "https://cryptocost.justben.fyi",
+        framework: "React",
         role: "Creator"
     },
 ]

@@ -25,6 +25,10 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Special+Elite&display=swap",
   },
+    {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Ledger&display=swap",
+  },
 ]
 
 export function Layout({ children }: { children: React.ReactNode }) {
