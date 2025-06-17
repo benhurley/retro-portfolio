@@ -89,11 +89,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         >
           <div
             className={`transform-gpu transition-transform duration-200 ease-in-out
-    ${pinInPosition ? "opacity-100" : "opacity-0 -translate-y-4"}
-    ${pinHovered ? "pin-animate-tug" : "pin-animate-reset"}
+    ${pinInPosition ? "opacity-100" : "opacity-0"}
+    ${pinHovered ? "pin-animate-tug" : ""}
   `}
             style={{
               rotate: `${pinOffset.rotate}deg`,
+              transform: pinInPosition
+                ? "translateY(0) scale(1)"
+                : "translateY(-8px) scale(1.5)", // Bigger & higher before it “pierces”
             }}
           >
             {/* Pin head */}
