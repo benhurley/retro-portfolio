@@ -84,7 +84,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         >
           <div
             className={`transform-gpu transition-transform duration-300 ease-in-out
-    ${pinInPosition ? "opacity-100" : "opacity-0 -translate-y-2"}
+    ${pinInPosition ? "opacity-100" : "opacity-0 -translate-y-16"}
     ${pinHovered ? "pin-animate-tug" : "pin-animate-reset"}
   `}
             style={{
