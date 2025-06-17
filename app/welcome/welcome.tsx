@@ -17,7 +17,7 @@ export function Welcome() {
             {/* Enhanced handwritten “1965 Version” */}
             <div className="absolute bottom-[-5%] right-[4%] pointer-events-none rotate-[-3deg] leading-[0.85] text-left">
               <span className='block text-[16px] font-["Special_Elite",monospace]'>
-                (1965 Edition)
+                Retro Edition
               </span>
             </div>
           </div>
