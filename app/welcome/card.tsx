@@ -67,7 +67,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
     const pinFadeIn = setTimeout(() => {
       setTimeout(() => setPinInPosition(true), 200);
-    }, 1500);
+    }, 800);
 
     return () => {
       clearTimeout(offsetTimeout);
