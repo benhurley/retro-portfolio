@@ -67,7 +67,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
     const pinFadeIn = setTimeout(() => {
       setTimeout(() => setPinInPosition(true), 200);
-    }, 800);
+    }, 1000);
 
     return () => {
       clearTimeout(offsetTimeout);
@@ -88,87 +88,78 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         setShowPinHole(false);
         setPinHovered(false);
       }}
-      className="group relative w-full max-w-md cursor-pointer z-0 animate-newspaper-drop-up transition-transform duration-300 ease-out hover:translate-y-[-4px] hover:scale-[1.07] hover:z-10 hover:shadow-[6px_8px_0_rgba(0,0,0,0.35)]"
+      className="group relative w-full max-w-md cursor-pointer z-0 animate-newspaper-drop-up transition-transform duration-500 ease-in-out hover:translate-y-[-4px] hover:scale-[1.04] hover:z-10 hover:shadow-[6px_8px_0_rgba(0,0,0,0.35)]"
       style={{ ...style, transform: finalTransform ?? undefined }}
     >
-      {/* Inner card gets final offset */}
+      {/* Pin */}
       <div
-        className="transition-transform duration-300 ease-out hover:translate-y-[-4px] hover:scale-[1.03] hover:z-10 hover:shadow-[6px_8px_0_rgba(0,0,0,0.35)]"
+        className="pin-wrapper absolute top-2 left-1/2 z-20 pointer-events-none"
         style={{
-          transform: finalTransform ?? undefined,
-          ...style,
+          transform: `translateX(${pinOffset.x}px) translateX(-50%)`,
+          willChange: "transform",
         }}
       >
-        {/* Pin */}
         <div
-          className="pin-wrapper absolute top-2 left-1/2 z-20 pointer-events-none"
-          style={{
-            transform: `translateX(${pinOffset.x}px) translateX(-50%)`,
-            willChange: "transform",
-          }}
-        >
-          <div
-            className={`transform-gpu transition-transform duration-200 ease-in-out
+          className={`transform-gpu transition-transform duration-300 ease-in-out
     ${pinInPosition ? "opacity-100" : "opacity-0"}
     ${pinHovered ? "pin-animate-tug" : ""}
   `}
-            style={{
-              rotate: `${pinOffset.rotate}deg`,
-              transform: pinInPosition
-                ? "translateY(0) scale(1)"
-                : "translateY(-1rem) scale(1.25)", // Bigger & higher before it “pierces”
-            }}
-          >
-            {/* Pin head */}
-            <div className="w-3 h-3 bg-black rounded-full shadow-md border border-black mx-auto -mt-[4px]" />
-
-            {/* Stem that grows on hover */}
-            <div className="w-[2px] h-[5px] group-hover:h-[16px] transition-all duration-300 ease-in-out bg-gray-700 mx-auto -mt-[1px] z-20" />
-          </div>
-
-          {/* Dot where the pin was */}
-          {showPinHole && (
-            <div className="w-[4px] h-[4px] bg-black rounded-full opacity-60 mx-auto -mt-[12px] transition-opacity duration-200 ease-out" />
-          )}
-        </div>
-
-        {/* Poster */}
-        <div
-          className="relative bg-[#fdf7e2] border border-black px-7 py-6 font-serif text-black z-10 aspect-[4/3] flex flex-col justify-between gap-2"
           style={{
-            backgroundImage: "url('/paper.png')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "200%",
+            rotate: `${pinOffset.rotate}deg`,
+            transform: pinInPosition
+              ? "translateY(0) scale(1)"
+              : "translateY(-1rem) scale(1.25)", // Bigger & higher before it “pierces”
           }}
         >
-          <div className="flex justify-between items-center text-[11px] font-mono uppercase tracking-widest opacity-80">
-            <span>{role}</span>
-            <div
-              className="text-black text-[10px] font-bold uppercase px-2 py-1 border border-black shadow -mt-1 mr-0 bg-white"
-              style={{
-                rotate: labelRotation,
-              }}
-            >
-              {framework}
-            </div>
-          </div>
+          {/* Pin head */}
+          <div className="w-3 h-3 bg-black rounded-full shadow-md border border-black mx-auto -mt-[4px]" />
 
-          <h3 className="text-xl font-bold uppercase font-['Ledger',serif]">
-            {title}
-          </h3>
-
-          <div className="mb-3 h-[150px] sm:h-[130px] w-full overflow-hidden border border-black">
-            <img
-              src={thumbnail}
-              alt={thumbnailAlt}
-              className="w-full h-full object-cover object-center bg-white
-             grayscale-70 contrast-110
-             group-hover:grayscale-0 group-hover:contrast-100"
-            />
-          </div>
-
-          <p className="text-[13px] font-mono">{description}</p>
+          {/* Stem that grows on hover */}
+          <div className="w-[2px] h-[5px] group-hover:h-[16px] transition-all duration-300 ease-in-out bg-gray-700 mx-auto -mt-[1px] z-20" />
         </div>
+
+        {/* Dot where the pin was */}
+        {showPinHole && (
+          <div className="w-[5px] h-[5px] bg-[#a0bed0] rounded-full mx-auto -mt-[12px] transition-opacity border border-black border-opacity-30" />
+        )}
+      </div>
+
+      {/* Poster */}
+      <div
+        className="relative bg-[#fdf7e2] border border-black px-7 py-6 font-serif text-black z-10 aspect-[4/3] flex flex-col justify-between gap-2"
+        style={{
+          backgroundImage: "url('/paper.png')",
+          backgroundRepeat: "repeat",
+          backgroundSize: "200%",
+        }}
+      >
+        <div className="flex justify-between items-center text-[11px] font-mono uppercase tracking-widest opacity-80">
+          <span>{role}</span>
+          <div
+            className="text-black text-[10px] font-bold uppercase px-2 py-1 border border-black shadow -mt-1 mr-0 bg-white"
+            style={{
+              rotate: labelRotation,
+            }}
+          >
+            {framework}
+          </div>
+        </div>
+
+        <h3 className="text-xl font-bold uppercase font-['Ledger',serif]">
+          {title}
+        </h3>
+
+        <div className="mb-3 h-[150px] sm:h-[130px] w-full overflow-hidden border border-black">
+          <img
+            src={thumbnail}
+            alt={thumbnailAlt}
+            className="w-full h-full object-cover object-center bg-white
+             grayscale-50 contrast-110
+             group-hover:grayscale-0 group-hover:contrast-100"
+          />
+        </div>
+
+        <p className="text-[13px] font-mono">{description}</p>
       </div>
     </a>
   );

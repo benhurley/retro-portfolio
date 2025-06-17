@@ -16,21 +16,8 @@
   }
 }
 
-@keyframes pin-reset {
-  0% {
-    transform: translate(0rem, -1.5rem);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
 .pin-animate-tug {
-  animation: pin-tug 100ms ease-out forwards;
-}
-
-.pin-animate-reset {
-  animation: pin-reset 100ms ease-in forwards;
+  animation: pin-tug 300ms ease-out forwards;
 }
 
 @keyframes flyer-slap {
@@ -67,21 +54,6 @@
   animation: flyer-drop-in 600ms ease-out forwards;
 }
 
-@keyframes pin-pop {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.animate-pin-pop {
-  animation: pin-pop 200ms ease-out forwards;
-}
-
 @keyframes newspaperDropUp {
   0% {
     opacity: 0;
@@ -95,7 +67,7 @@
 
 
 .animate-newspaper-drop-up {
-  animation: newspaperDropUp 0.45s ease-out both;
+  animation: newspaperDropUp 0.55s ease-out both;
 }
 
 @keyframes fadeIn {
