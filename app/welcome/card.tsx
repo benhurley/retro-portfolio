@@ -23,9 +23,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const [finalTransform, setFinalTransform] = useState<string | null>(null);
   const [pinOffset, setPinOffset] = useState({ x: 0, rotate: 0 });
-  const [showPin, setShowPin] = useState(false);
   const [pinInPosition, setPinInPosition] = useState(false);
   const [showPinHole, setShowPinHole] = useState(false);
+  const [pinHovered, setPinHovered] = useState(false);
 
   useEffect(() => {
     const rotate = (Math.random() * 5 - 2.5).toFixed(2);
@@ -42,7 +42,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     setPinOffset({ x: pinX, rotate: parseFloat(pinR) });
 
     const pinFadeIn = setTimeout(() => {
-      setShowPin(true);
       setTimeout(() => setPinInPosition(true), 200);
     }, 800);
 
@@ -57,9 +56,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      onMouseEnter={() => setShowPinHole(true)}
-      onMouseLeave={() => setShowPinHole(false)}
-      className="relative w-full max-w-md cursor-pointer z-0 animate-newspaper-drop-up"
+      onMouseEnter={() => {
+        setShowPinHole(true);
+        setPinHovered(true);
+      }}
+      onMouseLeave={() => {
+        setShowPinHole(false);
+        setPinHovered(false);
+      }}
+      className="group relative w-full max-w-md cursor-pointer z-0 animate-newspaper-drop-up transition-transform duration-300 ease-out hover:translate-y-[-4px] hover:scale-[1.07] hover:z-10 hover:shadow-[6px_8px_0_rgba(0,0,0,0.35)]"
+      style={{ ...style, transform: finalTransform ?? undefined }}
     >
       {/* Inner card gets final offset */}
       <div
@@ -76,22 +82,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             transform: `translateX(${pinOffset.x}px) translateX(-50%)`,
           }}
         >
-          {showPin && !showPinHole && (
-            <div
-              className="transition-all duration-300 ease-out"
-              style={{
-                transform: pinInPosition
-                  ? `translateY(0) rotate(${pinOffset.rotate}deg)`
-                  : `translateY(-6px) rotate(${pinOffset.rotate}deg)`,
-                opacity: pinInPosition ? 1 : 0,
-              }}
-            >
-              <div className="w-3 h-3 bg-red-600 rounded-full shadow-md border border-black mx-auto" />
-              <div className="w-[2px] h-[5px] bg-black mx-auto -mt-[1px]" />
-            </div>
-          )}
+          <div
+            className={`transform-gpu transition-transform duration-300 ease-in-out
+    ${pinInPosition ? "opacity-100" : "opacity-0 -translate-y-2"}
+    ${pinHovered ? "pin-animate-tug" : "pin-animate-reset"}
+  `}
+            style={{
+              rotate: `${pinOffset.rotate}deg`,
+            }}
+          >
+            {/* Pin head */}
+            <div className="w-3 h-3 bg-black rounded-full shadow-md border border-black mx-auto" />
+
+            {/* Stem that grows on hover */}
+            <div className="w-[2px] h-[5px] group-hover:h-[16px] transition-all duration-300 ease-in-out bg-gray-700 mx-auto -mt-[1px]" />
+          </div>
+
+          {/* Dot where the pin was */}
           {showPinHole && (
-            <div className="w-[4px] h-[4px] bg-black rounded-full opacity-60 mx-auto mt-[12px] transition-opacity duration-200 ease-out" />
+            <div className="w-[4px] h-[4px] bg-black rounded-full opacity-60 mx-auto -mt-[12px] transition-opacity duration-200 ease-out" />
           )}
         </div>
 
