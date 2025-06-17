@@ -120,7 +120,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             }}
           >
             {/* Pin head */}
-            <div className="w-3 h-3 bg-black rounded-full shadow-md border border-black mx-auto" />
+            <div className="w-3 h-3 bg-black rounded-full shadow-md border border-black mx-auto -mt-[4px]" />
 
             {/* Stem that grows on hover */}
             <div className="w-[2px] h-[5px] group-hover:h-[16px] transition-all duration-300 ease-in-out bg-gray-700 mx-auto -mt-[1px] z-20" />
@@ -161,7 +161,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <img
               src={thumbnail}
               alt={thumbnailAlt}
-              className="w-full h-full object-cover object-center bg-white"
+              className="w-full h-full object-cover object-center bg-white
+             grayscale contrast-120
+             group-hover:grayscale-0 group-hover:contrast-100"
             />
           </div>
 
