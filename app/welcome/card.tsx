@@ -96,7 +96,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               rotate: `${pinOffset.rotate}deg`,
               transform: pinInPosition
                 ? "translateY(0) scale(1)"
-                : "translateY(-8px) scale(1.5)", // Bigger & higher before it “pierces”
+                : "translateY(0) scale(1.75)", // Bigger & higher before it “pierces”
             }}
           >
             {/* Pin head */}
