@@ -5,7 +5,7 @@ import Newport65 from "../img/newport-65.webp";
 
 export function Welcome() {
   return (
-<main className="flex-1 flex flex-col flex items-center justify-center pt-8 md:pt-16 md:pb-4">
+    <main className="flex-1 flex flex-col flex items-center justify-center pt-8 md:pt-16 md:pb-4">
       <div className="flex-1 flex flex-col items-center gap-12 min-h-0">
         <header className="flex flex-col items-center gap-4">
           <div className="relative w-full max-w-[500px] mx-auto">
@@ -46,7 +46,7 @@ export function Welcome() {
             />
           ))}
         </div>
-        <footer className="mt-16 px-4 text-center max-w-3xl mx-auto">
+        <footer className="mt-8 px-4 text-center max-w-3xl mx-auto">
           <p className="font-mono text-xs uppercase tracking-wider mb-6">
             This design was inspired by the 1965 Newport Folk Festival.
           </p>
@@ -61,6 +61,14 @@ export function Welcome() {
               Paul Butterfield Blues Band
             </div>
           </div>
+          <a
+            href="https://justben.fyi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs uppercase tracking-wider block text-center underline mt-10"
+          >
+            Back to my main site
+          </a>
         </footer>
       </div>
     </main>
