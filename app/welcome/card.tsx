@@ -113,14 +113,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         >
           {/* Pin head */}
           <div className="w-3 h-3 bg-black rounded-full shadow-md border border-black mx-auto -mt-[4px]" />
+          <div className="flex flex-col items-center -mt-[1px] z-20">
+            {/* Stem */}
+            <div className="w-[2px] h-[5px] group-hover:h-[16px] transition-all duration-300 ease-in-out bg-gray-700" />
 
-          {/* Stem that grows on hover */}
-          <div className="w-[2px] h-[5px] group-hover:h-[16px] transition-all duration-300 ease-in-out bg-gray-700 mx-auto -mt-[1px] z-20" />
+            {/* Triangle tip (only visible on hover) */}
+            <div
+              className="w-0 h-0 invisible group-hover:visible 
+               border-l-[1px] border-r-[1px] border-t-[4px] 
+               border-l-transparent border-r-transparent border-t-gray-700 
+               transition-opacity duration-300 ease-in-out"
+            />
+          </div>
         </div>
 
         {/* Dot where the pin was */}
         {showPinHole && (
-          <div className="w-[5px] h-[5px] bg-[#a0bed0] rounded-full mx-auto -mt-[12px] transition-opacity border border-black border-opacity-30" />
+          <div className="w-[4px] h-[4px] bg-[#a0bed0] rounded-full mx-auto -mt-[12px] transition-opacity border border-black border-opacity-30" />
         )}
       </div>
 
@@ -129,8 +138,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         className="relative bg-[#fdf7e2] border border-black px-7 py-6 font-serif text-black z-10 aspect-[4/3] flex flex-col justify-between gap-2"
         style={{
           backgroundImage: "url('/paper.png')",
-          backgroundRepeat: "repeat",
           backgroundSize: "200%",
+          backgroundColor: "#faf4d3",
         }}
       >
         <div className="flex justify-between items-center text-[11px] font-mono uppercase tracking-widest opacity-80">
