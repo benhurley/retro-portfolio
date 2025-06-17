@@ -1,0 +1,32 @@
+<svg viewBox="118 28 368.5 128.5" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer diamond shadow (offset and darker) -->
+  <polygon points="304.5,34.5 484.5,94.5 304.5,154.5 124.5,94.5" fill="#333" />
+
+  <!-- Outer diamond (frame) -->
+  <polygon points="300,30 480,90 300,150 120,90" fill="#a0bed0" stroke="#000000" stroke-width="3"/>
+
+  <!-- Mini diamonds (off-white) - Left -->
+  <polygon points="160.5,90 169.5,75 178.5,90 169.5,105" fill="#f6f1e3"/>
+  <polygon points="178.5,90 190.5,70.5 202.5,90 190.5,109.5" fill="#f6f1e3"/>
+  <polygon points="202.5,90 219,64.5 235.5,90 219,115.5" fill="#f6f1e3"/>
+  <polygon points="235.5,90 256.5,49.5 277.5,90 256.5,130.5" fill="#f6f1e3"/>
+
+  <!-- Center diamond (largest) -->
+  <polygon points="277.5,90 300,42 322.5,90 300,138" fill="#f6f1e3"/>
+
+  <!-- Mini diamonds - Right -->
+  <polygon points="322.5,90 343.5,49.5 364.5,90 343.5,130.5" fill="#f6f1e3"/>
+  <polygon points="364.5,90 381,64.5 397.5,90 381,115.5" fill="#f6f1e3"/>
+  <polygon points="397.5,90 409.5,70.5 421.5,90 409.5,109.5" fill="#f6f1e3"/>
+  <polygon points="421.5,90 430.5,75 439.5,90 430.5,105" fill="#f6f1e3"/>
+
+  <!-- Text: Futura Rounded Bold, adjusted vertical position -->
+  <text x="300" y="93"
+        font-family="'Futura Rounded', Futura, Arial, sans-serif"
+        font-size="27"
+        font-weight="700"
+        text-anchor="middle"
+        fill="#000000"
+        dominant-baseline="middle"
+        letter-spacing="3.75">JUSTBEN.FYI</text>
+</svg>
