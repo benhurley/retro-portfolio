@@ -88,7 +88,7 @@ export const websites = [
             {
         imgUrl: SmokeBroScreenshot,
         imgAlt: "Smoke Bro Homepage",
-        title: "SmokeBro",
+        title: "Smoke Bro",
         description: "The Ultimate 4-in-1 Cigar Holder, made for golfers.",
         url: "https://mysmokebro.com",
         framework: "GoDaddy",

@@ -88,7 +88,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         setShowPinHole(false);
         setPinHovered(false);
       }}
-      className="group relative w-full max-w-md cursor-pointer z-0 animate-newspaper-drop-up transition-transform duration-500 ease-in-out hover:translate-y-[-4px] hover:scale-[1.04] hover:z-10 hover:shadow-[6px_8px_0_rgba(0,0,0,0.35)]"
+      className="group relative w-full max-w-md cursor-pointer z-0 animate-newspaper-drop-up transition-transform duration-500 ease-in-out hover:translate-y-[-4px] hover:scale-[1.04] hover:z-10 hover:shadow-[6px_8px_0_rgba(0,0,0,0.2)]"
       style={{ ...style, transform: finalTransform ?? undefined }}
     >
       {/* Pin */}
@@ -112,7 +112,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           }}
         >
           {/* Pin head */}
-          <div className="w-3 h-3 bg-black rounded-full shadow-md border border-black mx-auto -mt-[4px]" />
+          <div className="w-3 h-3 bg-white rounded-full shadow-md border border-black mx-auto -mt-[4px]" />
           <div className="flex flex-col items-center -mt-[1px] z-20">
             {/* Stem */}
             <div className="w-[2px] h-[5px] group-hover:h-[16px] transition-all duration-300 ease-in-out bg-gray-700" />
@@ -154,7 +154,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
 
-        <h3 className="text-xl font-bold uppercase font-['Ledger',serif]">
+        <h3 className="text-xl font-bold uppercase font-[&quot;Special_Elite&quot;,monospace] tracking-wide">
           {title}
         </h3>
 
@@ -163,7 +163,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             src={thumbnail}
             alt={thumbnailAlt}
             className="w-full h-full object-cover object-center bg-white
-             grayscale-50 contrast-110
+             grayscale-65 contrast-110
              group-hover:grayscale-0 group-hover:contrast-100"
           />
         </div>
