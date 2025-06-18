@@ -151,7 +151,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="w-3 h-3 bg-white rounded-full shadow-md border border-black mx-auto -mt-[4px]" />
           <div className="flex flex-col items-center -mt-[1px] z-20">
             {/* Stem */}
-            <div className="w-[2px] h-[5px] group-hover:h-[16px] transition-all duration-300 ease-in-out bg-gray-700" />
+            <div className="w-[2px] h-[8px] group-hover:h-[16px] transition-all duration-300 ease-in-out bg-gray-700" />
 
             {/* Triangle tip (only visible on hover) */}
             <div
@@ -165,7 +165,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
         {/* Dot where the pin was */}
         {showPinHole && (
-          <div className="w-[4px] h-[4px] bg-[#a0bed0] rounded-full mx-auto -mt-[12px] transition-opacity border border-black border-opacity-30" />
+          <div className="w-[4px] h-[4px] bg-[#dbbd86] rounded-full mx-auto -mt-[12px] transition-opacity border border-black border-opacity-30" />
         )}
       </div>
 
