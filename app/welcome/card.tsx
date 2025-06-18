@@ -75,6 +75,42 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     };
   }, []);
 
+  useEffect(() => {
+    if (window.innerWidth >= 768) return; // Skip on desktop
+
+    const images = document.querySelectorAll("[data-mobile-in-view]");
+
+    const handleScroll = () => {
+      const viewportCenter = window.innerHeight / 2;
+      const range = 200; // <-- widen this to control sensitivity
+
+      images.forEach((img) => {
+        const rect = img.getBoundingClientRect();
+        const imgCenter = rect.top + rect.height / 2;
+        const isCentered =
+          imgCenter > viewportCenter - range &&
+          imgCenter < viewportCenter + range;
+
+        if (isCentered) {
+          img.classList.add("grayscale-0");
+          img.classList.remove("grayscale");
+        } else {
+          img.classList.remove("grayscale-0");
+          img.classList.add("grayscale");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    handleScroll(); // initial run
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
   return (
     <a
       href={link}
@@ -154,7 +190,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
 
-        <h3 className="text-xl font-bold uppercase font-[&quot;Special_Elite&quot;,monospace] tracking-wide">
+        <h3 className='text-xl font-bold uppercase font-["Special_Elite",monospace] tracking-wide'>
           {title}
         </h3>
 
@@ -162,9 +198,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <img
             src={thumbnail}
             alt={thumbnailAlt}
-            className="w-full h-full object-cover object-center bg-white
-             grayscale-65 contrast-110
-             group-hover:grayscale-0 group-hover:contrast-100"
+            className={`w-full h-full object-cover object-center bg-white
+    grayscale contrast-110 transition-all duration-500
+    md:grayscale-100
+    group-hover:grayscale-0 group-hover:contrast-100 hovver:grayscale-0`}
+            data-mobile-in-view
           />
         </div>
 
